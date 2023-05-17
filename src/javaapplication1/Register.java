@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class Register extends javax.swing.JFrame {
 
-    String gender = "";
+    String gender = "Male";
 
     public Register() {
         initComponents();
@@ -170,6 +170,9 @@ public class Register extends javax.swing.JFrame {
         empty.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         empty.setForeground(new java.awt.Color(255, 51, 51));
 
+        jDateChooser1.setMaxSelectableDate(new java.util.Date(1167606000000L));
+        jDateChooser1.setMinSelectableDate(new java.util.Date(-946774800000L));
+
         jLabel7.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Country");
@@ -228,7 +231,7 @@ public class Register extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Password)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(empty, javax.swing.GroupLayout.DEFAULT_SIZE, 8, Short.MAX_VALUE)
+                .addComponent(empty, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
@@ -318,7 +321,18 @@ public class Register extends javax.swing.JFrame {
                 || Answer.getText().isEmpty()
                 || jComboBox1.getSelectedItem().equals("select country")
                 || jComboBox2.getSelectedItem().equals("select questions")
-                || jDateChooser1.isValid();
+                || !jDateChooser1.isValid();
+        
+        System.out.println("FirstName: " + Fname.getText());
+        System.out.println("LastName: " + Lname.getText());
+        System.out.println("Email: " + Email.getText());
+        System.out.println("Password: " + Password.getText());
+        System.out.println("Answer: " + Answer.getText());
+        System.out.println("jComboBox1: " + jComboBox1.getSelectedItem().toString());
+        System.out.println("jComboBox2: " + jComboBox2.getSelectedItem().toString());
+        System.out.println("jDateChooser1: " + jDateChooser1.isValid());
+
+        
         if (isValidInputs) {
             JOptionPane.showMessageDialog(null, "Missing Fileds!, Please Try Again.", "Error", JOptionPane.ERROR_MESSAGE);
         } else if (Fname.getText().length() < 3 || Lname.getText().length() < 3) {
@@ -374,7 +388,37 @@ public class Register extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Answer;
+    private javax.swing.JTextField Email;
+    private javax.swing.JRadioButton Female;
+    private javax.swing.JTextField Fname;
+    private javax.swing.JTextField Lname;
+    private javax.swing.JRadioButton Male;
+    private javax.swing.JPasswordField Password;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel datename;
+    private javax.swing.JLabel datename1;
+    private javax.swing.JLabel empty;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    // End of variables declaration//GEN-END:variables
+
+    
+        public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -406,30 +450,4 @@ public class Register extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Answer;
-    private javax.swing.JTextField Email;
-    private javax.swing.JRadioButton Female;
-    private javax.swing.JTextField Fname;
-    private javax.swing.JTextField Lname;
-    private javax.swing.JRadioButton Male;
-    private javax.swing.JPasswordField Password;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JLabel datename;
-    private javax.swing.JLabel datename1;
-    private javax.swing.JLabel empty;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
-    // End of variables declaration//GEN-END:variables
 }
